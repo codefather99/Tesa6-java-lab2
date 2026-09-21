@@ -5,6 +5,9 @@ Author: Henry Emefo
 Toolchain: javac 25.0.1 java 25.0.1 2025-10-21 LTS Java(TM) SE Runtime Environment (build 25.0.1+8-LTS-27) 
 Java HotSpot(TM) 64-Bit Server VM (build 25.0.1+8-LTS-27, mixed mode, sharing)
 
+Note:
+a hyphen isn't a legal Java identifier character, so the file/class "agent-output" name had to change to "agent_output"
+
 ---
 
 ## 1. Primary documentation: may Optional be used as a field?
@@ -103,8 +106,9 @@ it is O(1) instead of O(n).
 
 ## 4. Run output
 
-`javac -Xlint:all -d out src/*.java` compiles clean — no warnings, no unchecked
-operations.
+"the repository's own code compiles clean under -Xlint:all; 
+the two raw-type warnings come from the intentionally-unedited agent_output.java, 
+which is the defect under audit, not a defect in this codebase.
 
 ### SettlementReport
 
